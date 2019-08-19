@@ -21,7 +21,7 @@
 			<div class="wrapper row">
 				<div class="nopadding text-center col-md-5">
                     <br/>
-                    <img th:src="@{/img/400x400.png}" class="img-fluid rounded img-thumbnail"/>
+                    <img th:src="@{/img/{path}/400x400.png(path=${product.imagePath})}" class="img-fluid rounded img-thumbnail"/>
 				</div>
 				<div class="col-md-7">
 					<br/>
@@ -43,7 +43,7 @@
 						<h6><small> <span class="text-muted"><strong>Weight: </strong></span><span th:text="${physicalproduct.getWeight()}"></span></small></h6>
 						<hr/>
 					</div>
-					<h5 class="price">Price: <i class="fas fa-dollar-sign"></i><span th:text="${product.price}"></span></h5>
+					<h5 class="price">Price: <i class="fas fa-euro-sign"></i><span th:text="${product.price}"></span></h5>
                     <div class="action">
 						<a class="btn btn-primary" th:href="@{/store/view/{id}(id = ${product.store.id})}"><i class="fas fa-list"></i> View Store </a>
 						<a class="btn btn-success" th:href="@{/store/products/{id}/buy(id = ${product.id})}"><i class="fas fa-shopping-cart"></i> Add to Shopping Cart </a>

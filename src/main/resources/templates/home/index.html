@@ -55,7 +55,7 @@
             <div class="row">
                 <div class="col-md-3 nopadding" th:each="product,i :${products}">
                     <div class="card" style="min-height: 100%;">
-                        <img class="card-img-top" th:src="@{/img/200x200.png}"
+                        <img class="card-img-top" th:src="@{/img/{path}/200x200.png(path=${product.imagePath})}"
                              alt="Card image cap"/>
                         <div class="col-lg-12">
                             <br/>
@@ -78,7 +78,7 @@
                         <div style="margin-top: auto; margin-bottom: 10px;">
                             <hr style="margin-top:  0; border: 0"/>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item "><i class="fas fa-dollar-sign"></i>
+                                <li class="list-group-item "><i class="fas fa-euro-sign"></i>
                                     <th:block th:text="${product.price}"></th:block>
                                 </li>
                             </ul>

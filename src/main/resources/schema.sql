@@ -219,6 +219,7 @@ CREATE TABLE IF NOT EXISTS `store_product` (
   `views` int(11) NOT NULL,
   `product_id` bigint(20) DEFAULT NULL,
   `store_id` bigint(20) DEFAULT NULL,
+  `image_path` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_nytc5kna59uyspbegkf3il5xw` (`product_id`),
   KEY `FK_eskpx52hpw1adtafvha4kixxc` (`store_id`)

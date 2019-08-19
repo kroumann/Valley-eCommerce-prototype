@@ -26,6 +26,10 @@ public class StoreProduct {
 	private String name;
 
 	@Field
+	@Column(name="image_path", length = 255)
+	private String imagePath;
+
+	@Field
 	@Column(length = 1000)
 	private String description;
 
@@ -49,6 +53,7 @@ public class StoreProduct {
 
 	public StoreProduct() {
 		storeViews=0;
+		imagePath = "";
 	}
 
 	public Product getProduct() {
@@ -97,6 +102,14 @@ public class StoreProduct {
 
 	public void setStoreViews(int storeViews) {
 		this.storeViews = storeViews;
+	}
+
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = (imagePath != null) ? imagePath : "";
 	}
 
 	public String getName() {
