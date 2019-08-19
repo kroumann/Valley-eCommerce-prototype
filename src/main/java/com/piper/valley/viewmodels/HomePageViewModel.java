@@ -17,6 +17,7 @@ public class HomePageViewModel {
     public HashMap<String, Object> create() {
         HashMap<String, Object> model = new HashMap<>();
         Collection<StoreProduct> products=storeProductService.getTop30();
+        System.out.println("products:" + products.toString());
         model.put("products",products);
         return model;
     }
