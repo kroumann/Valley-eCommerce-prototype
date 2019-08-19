@@ -11,6 +11,7 @@ INSERT INTO `user` (`id`, `email`, `name`, `password_hash`, `username`) VALUES
 
 INSERT INTO `user_roles` (`id`, `roles`) VALUES
 (1, 'ADMIN'),
+(1, 'STORE_OWNER'),
 (2, 'USER');
 
 INSERT INTO `brand` (`id`, `name`) VALUES
@@ -60,8 +61,9 @@ INSERT INTO `admin` (`user_id`, `superior_user_id`) VALUES
 (1, 1);
 
 
-INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
+
 --Desktop
+INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
 (1,  979, '2019-08-18 07:18:16', 'Ordinateur de bureau LG', 1, 2, 1),
 (2,  650, '2019-08-18 15:31:48', 'HP WorkStation Z220 SFF (slim)', 2, 1, 1),
 (3,  850, '2019-08-18 15:32:48', 'HP 22-c0052nf', 3, 1, 2),
@@ -71,8 +73,10 @@ INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `bra
 (7,  850, '2019-08-18 15:35:02', 'Medion AKOYA e23401 All-in-One PC', 7, 19, 1),
 (8,  450, '2019-08-18 15:36:01', 'Apple iMac', 8, 4, 1),
 (9,  870, '2019-08-18 15:36:24', 'Megaport Super Mega Pack', 9, 18, 1),
-(10, 740, '2019-08-18 15:36:59', 'Asustek V221IDUK-BA114T', 10, 17, 1),
+(10, 740, '2019-08-18 15:36:59', 'Asustek V221IDUK-BA114T', 10, 17, 1);
+
  --laptops
+ INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
 (101, 870, '2019-08-18 15:36:24', 'HUAWEI MateBook D 15.6\"', 101, 13, 1),
 (102, 870, '2019-08-18 15:36:24', 'HP 15-da0106nf', 102, 1, 1),
 (103, 870, '2019-08-18 15:36:24', 'Winnovo V146 Notebook', 103, 14, 1),
@@ -82,8 +86,10 @@ INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `bra
 (107, 870, '2019-08-18 15:36:24', 'Dell Inspiron 15-5570', 107, 12, 1),
 (108, 870, '2019-08-18 15:36:24', 'Lenovo Idéapad D330', 108, 16, 1),
 (109, 870, '2019-08-18 15:36:24', 'Apple MacBook Air',109, 4, 1),
-(110, 870, '2019-08-18 15:36:24', 'HP 14-cm0023nf',110, 1, 1),
+(110, 870, '2019-08-18 15:36:24', 'HP 14-cm0023nf',110, 1, 1);
+
 -- phones
+INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
 (200, 870, '2019-08-18 15:36:24', 'Apple iPhone 6', 200, 4, 1),
 (201, 870, '2019-08-18 15:36:24', 'Apple iPhone 6 plus', 201, 4, 1),
 (202, 870, '2019-08-18 15:36:24', 'Apple iphone 8', 202, 4, 1),
@@ -95,8 +101,10 @@ INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `bra
 (208, 870, '2019-08-18 15:36:24', 'Samsung Galaxy S9', 208, 3, 1),
 (209, 870, '2019-08-18 15:36:24', 'Samsung Galaxy S9 plus', 209, 3, 1),
 (210, 870, '2019-08-18 15:36:24', 'Samsung Galaxy A10', 210, 3, 1),
-(211, 870, '2019-08-18 15:36:24', 'Samsung-SM-G900V', 211, 3, 1),
+(211, 870, '2019-08-18 15:36:24', 'Samsung-SM-G900V', 211, 3, 1);
+
 --printers
+INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
 (300, 870, '2019-08-18 15:36:24', 'Pixma Ts5050black MFP', 300, 20, 1),
 (301, 870, '2019-08-18 15:36:24', 'HP Deskjet 2634', 301, 1, 1),
 (302, 870, '2019-08-18 15:36:24', 'Brother MFC-L2710DW', 302, 21, 1),
@@ -155,7 +163,62 @@ INSERT INTO `virtual_product` (`serial`, `id`) VALUES
 ('100000309', 309),
 ('100000310', 310);
 
+--Desktop
 INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_id`, `store_id`, `image_path`) VALUES
+('desktop 1', 'Ordinateur de bureau LG', 650, 10, 2, 1, 'desktop/1'),
+('desktop 2', 'HP WorkStation Z220 SFF (slim)', 730, 10, 2, 1, 'desktop/2'),
+('desktop 3', 'HP 22-c0052nf', 760, 10, 3, 1, 'desktop/3'),
+('desktop 4', 'HP Pavilion 24-xa0017nf', 420, 10, 4, 1, 'desktop/4'),
+('desktop 5', 'HP 22-b003ns', 560, 10, 5, 1, 'desktop/5'),
+('desktop 6', 'HP All-in-One PC 24-f0038nl', 470, 10, 6, 1, 'desktop/6'),
+('desktop 7', 'Medion AKOYA e23401 All-in-One PC', 360,  10, 7, 1, 'desktop/7'),
+('desktop 8', 'Apple iMac', 980, 10, 8, 1, 'desktop/8'),
+('desktop 9', 'Megaport Super Mega Pack', 420, 10, 9, 1, 'desktop/9'),
+('desktop 10', 'Asustek V221IDUK-BA114T', 490, 10, 10, 1, 'desktop/10');
+
+ --laptops
+ INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_id`, `store_id`, `image_path`) VALUES
+('laptops 1', 'HUAWEI MateBook D 15.6\"', 690, 10, 101, 1, 'laptops/1'),
+('laptops 2', 'HP 15-da0106nf', 720, 10, 102, 1, 'laptops/2'),
+('laptops 3', 'Winnovo V146 Notebook',320, 10, 103, 1, 'laptops/3'),
+('laptops 4', 'ASUS ZenBook 14 UX410UA-GV410T', 450, 10, 104, 1, 'laptops/4'),
+('laptops 5', 'Asus Vivobook E402WA GA062TS', 500, 10, 105, 1, 'laptops/5'),
+('laptops 6', 'Asus Vivobook S S512UA-EJ086T', 560, 10, 106, 1, 'laptops/6'),
+('laptops 7', 'Dell Inspiron 15-5570', 460, 10, 107, 1, 'laptops/7'),
+('laptops 8', 'Lenovo Idéapad D330', 580, 10, 108, 1, 'laptops/8'),
+('laptops 9', 'Apple MacBook Air', 990, 10, 109, 1, 'laptops/9'),
+('laptops 10', 'HP 14-cm0023nf', 650, 10, 110, 1, 'laptops/10');
+
+-- phones
+INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_id`, `store_id`, `image_path`) VALUES
+('phones 0', 'Apple iPhone 6', 620, 10, 200, 1, 'phones/1'),
+('phones 1', 'Apple iPhone 6 plus', 830, 10, 201, 1, 'phones/2'),
+('phones 2', 'Apple iphone 8', 730, 10,  202, 1, 'phones/3'),
+('phones 3', 'Apple iphone 8 plus', 780, 10, 203, 1, 'phones/4'),
+('phones 4', 'Apple iphone X', 999, 10, 204, 1, 'phones/5'),
+('phones 5', 'Samsung Galaxy Note8', 980, 10, 205, 1, 'phones/6'),
+('phones 6', 'Samsung Galaxy S7', 320, 10, 206, 1, 'phones/7'),
+('phones 7', 'Samsung Galaxy S8', 450, 10, 207, 1, 'phones/8'),
+('phones 8', 'Samsung Galaxy S9', 560, 10, 208, 1, 'phones/9'),
+('phones 9', 'Samsung Galaxy S9 plus', 610, 10, 209, 1, 'phones/10'),
+('phones 10', 'Samsung Galaxy A10', 320, 10, 210, 1, null),
+('phones 11', 'Samsung-SM-G900V', 260, 10, 211, 1, 'phones/11');
+
+-- printers
+INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_id`, `store_id`, `image_path`) VALUES
+('printers 1', 'Pixma Ts5050black MFP',65, 10, 300, 1, 'printers/1'),
+('printers 2', 'HP Deskjet 2634', 180, 10, 301, 1, 'printers/2'),
+('printers 3', 'Brother MFC-L2710DW', 120, 10, 302, 1, 'printers/3'),
+('printers 4', 'HP Officejet 3833', 130, 10, 303, 1, 'printers/4'),
+('printers 5', 'HP Envy Photo 7830', 80, 10, 304, 1, 'printers/5'),
+('printers 6', 'HP Officejet Pro 8720', 95, 10, 305, 1, 'printers/6'),
+('printers 7', 'Brother MFC-J5330DW', 130, 10, 306, 1, 'printers/7'),
+('printers 8', 'HP Officejet Pro 7720', 230, 10, 307, 1, 'printers/8'),
+('printers 9', 'Brother DCP-J572DW',280, 10,  308, 1, 'printers/9'),
+('printers 10', 'Epson Workforce WF-2630WF', 240, 10, 309, 1, 'printers/10'),
+('printers 11', 'HP Officejet Pro 8720 All-in-One', 280, 10, 310, 1, null);
+
+/*
 ('Store 1 description for: Telephone portable', 'Telephone portable', 650, 50, 1, 1, null),
 ('Store 1 description for: Ordinateur de bureau LG', 'Ordinateur de bureau LG', 750, 50, 2, 1, 'desktop/1'),
 ('Store 1 description for: HP WorkStation Z220 SFF (slim)', 'HP WorkStation Z220 SFF (slim)', 690, 50, 3, 1, null),
@@ -167,7 +230,7 @@ INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_i
 ('Store 1 description for: Apple iMac', 'Apple iMac', 800, 50, 9, 1, null),
 ('Store 1 description for: Megaport Super Mega Pack', 'Megaport Super Mega Pack', 820, 50, 10, 1, null),
 ('Store 1 description for: Apple iMac 2', 'Apple iMac 2', 810, 50, 11, 1, null);
-/*
+
 INSERT INTO `store_product_history` (`old_description`, `old_name`, `old_product_price`, `product_id`, `store_id`, `store_productid`) VALUES
 ('Store 1 old description for: Telephone portable', 'Telephone portable old', 650, 50, 1, 1);
 */
