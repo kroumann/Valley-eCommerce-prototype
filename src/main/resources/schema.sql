@@ -309,6 +309,27 @@ CREATE TABLE IF NOT EXISTS `virtual_product` (
   `id` bigint(20) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forms`
+--
+
+-- GENERATED ALWAYS AS(`form_data` ->> '$.type') 
+
+DROP TABLE IF EXISTS `forms`;
+CREATE TABLE IF NOT EXISTS `forms` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `creation_date` datetime NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `form_data` JSON NOT NULL,
+  `type` VARCHAR(255) NOT NULL,  
+  `status` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  foreign key (`user_id`) references user(`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

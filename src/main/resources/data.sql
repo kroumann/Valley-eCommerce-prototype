@@ -35,7 +35,8 @@ INSERT INTO `brand` (`id`, `name`) VALUES
 (18, 'MEGAPORT'),
 (19, 'MEDION'),
 (20, 'PIXMA'),
-(21, 'BROTHER');
+(21, 'BROTHER'),
+(22, 'SERVICES');
 
 
 --
@@ -62,6 +63,7 @@ INSERT INTO `admin` (`user_id`, `superior_user_id`) VALUES
 
 
 
+
 --Desktop
 INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
 (1,  979, '2019-08-18 07:18:16', 'Ordinateur de bureau LG', 1, 2, 1),
@@ -74,6 +76,11 @@ INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `bra
 (8,  450, '2019-08-18 15:36:01', 'Apple iMac', 8, 4, 1),
 (9,  870, '2019-08-18 15:36:24', 'Megaport Super Mega Pack', 9, 18, 1),
 (10, 740, '2019-08-18 15:36:59', 'Asustek V221IDUK-BA114T', 10, 17, 1);
+
+-- Formulaires
+INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
+(11,  0, '2019-09-21 08:45:15', 'Formulaire de déclaration (Dévises)', 1, 22, 1),
+(12,  0, '2019-08-21 08:44:10', 'Mes Démandes', 1, 22, 1);
 
  --laptops
  INSERT INTO `product` (`id`, `average_price`, `date_time`, `name`, `views`, `brand_id`, `company_id`) VALUES
@@ -129,6 +136,8 @@ INSERT INTO `virtual_product` (`serial`, `id`) VALUES
 ('100000008', 8),
 ('100000009', 9),
 ('100000010', 10),
+('100000011', 11),
+('100000012', 12),
 ('100000101', 101),
 ('100000102', 102),
 ('100000103', 103),
@@ -175,6 +184,11 @@ INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_i
 ('desktop 8', 'Apple iMac', 980, 10, 8, 1, 'desktop/8'),
 ('desktop 9', 'Megaport Super Mega Pack', 420, 10, 9, 1, 'desktop/9'),
 ('desktop 10', 'Asustek V221IDUK-BA114T', 490, 10, 10, 1, 'desktop/10');
+
+-- Formulaires
+INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_id`, `store_id`, `image_path`) VALUES
+(11,  0, '2019-09-21 08:45:15', 'Formulaire de déclaration (Dévises)', 1, 22, 1),
+(12,  0, '2019-08-21 08:44:10', 'Mes Démandes', 1, 22, 1);
 
  --laptops
  INSERT INTO `store_product` (`description`, `name`, `price`, `views`, `product_id`, `store_id`, `image_path`) VALUES
