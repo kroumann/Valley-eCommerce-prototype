@@ -8,10 +8,8 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "forms")
-@Inheritance( strategy = InheritanceType.SINGLE_TABLE )
-@DiscriminatorColumn (name = "type", discriminatorType = DiscriminatorType.STRING)
-public class Formulaire {
+@DiscriminatorValue("DECLARION_DEVISE")
+public class FormDevise extends Formulaire {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id", nullable = false, updatable = false)
