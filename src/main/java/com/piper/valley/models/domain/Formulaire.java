@@ -9,7 +9,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "forms")
-//@Inheritance( strategy = InheritanceType.JOINED )
+@Inheritance( strategy = InheritanceType.SINGLE_TABLE )
+@DiscriminatorColumn (name = "type", discriminatorType = DiscriminatorType.STRING)
 public class Formulaire {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -20,94 +21,22 @@ public class Formulaire {
     @Field
     private Date creationDate;
 
-	@ManyToOne
-	@IndexedEmbedded
-	private Brand brand; //Obj suffix temp.
-
-	@ManyToOne
-	@IndexedEmbedded
-	private Company company; //Obj suffix temp.
-
-    @Column(name = "averagePrice", nullable = false, unique = false)
-    private Float averagePrice;
-
-    @Column(name = "dateTime", nullable = false, unique = false)
-    private Date dateTime;
-
-	@OneToMany(mappedBy = "product")
-	private List<StoreProduct> storeProducts;
-
-    @Column(name = "views", nullable = false, unique = false)
-    private int view;
-
-    public Product(){
-        this.name = "";
-        this.averagePrice = 0f;
-        this.dateTime = null;
-        this.view=0;
+    public Formulaire() {
     }
 
-    public Product(String name, Brand brand, Float averagePrice, Date dateTime) {
-        this.name = name;
-        this.brand = brand;
-        this.averagePrice = averagePrice;
-        this.dateTime = dateTime;
-        this.view=0;
-    }
-
-	public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBrand(Brand brand) {
-        this.brand=brand;
-    }
-
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public void setAveragePrice(Float averagePrice) {
-        this.averagePrice = averagePrice;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public void setDateTime(Date dateTime) {
-        this.dateTime = dateTime;
+    public void setCreationDate(Date cerationDate) {
+        this.creationDate = creationDate;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public Brand getBrand() {
-        return brand;
-    }
-
-    public Float getAveragePrice() {
-        return averagePrice;
-    }
-
-    public Date getDateTime() {
-        return dateTime;
-    }
-
-	public Company getCompany() {
-		return company;
-	}
-
-	public void setCompany(Company company) {
-		this.company = company;
-	}
-
-    public int getView() {
-        return view;
-    }
-
-    public void setView(int view) {
-        this.view = view;
+    public Date getCreationDate() {
+        return creationDate;
     }
 }
